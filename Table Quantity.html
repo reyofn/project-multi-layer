@@ -1,0 +1,103 @@
+<!DOCTYPE>
+<html>
+<head>
+<title>Table Quantity Calculator</title>
+<style >
+
+body{
+background-color:#f1f1f1 ;
+text-align: center;
+ }
+
+h1{
+color:navy ;
+text-align:center ;
+ }  
+
+p{
+ text-align:center;    
+}
+
+    /* CSS for the navigation bar */
+    ul.navbar {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color:navy;
+      text-align: center;
+    }
+
+    ul.navbar li {
+      display: inline-block;
+      margin: 10px;
+    }
+    
+    ul.navbar li a {
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+    
+    ul.navbar li a:hover {
+      background-color: #111;
+    }
+
+    .logo {
+      display: block;
+      margin: 0 auto;
+      max-width: 100px;
+      max-height: 100px;
+	  text-align:center;
+    }
+
+    .website-name {
+      color: white;
+      font-weight: bold;
+      font-size: 20px;
+      margin-top: 10px;
+    }
+</style>
+<script>
+function calculateTotal() {
+var quantity = parseInt(document.getElementById('quantity').value);
+var productSelect = document.getElementById('product');
+var selectedProductId = productSelect.options[productSelect.selectedIndex].value;
+var specialPrice = parseFloat(productSelect.options[productSelect.selectedIndex].getAttribute('data-price'));
+var total = quantity * specialPrice;
+document.getElementById('total').innerHTML = 'Total Price: $' + total.toFixed(2);
+ }
+</script>
+</head>
+
+  <nav>
+    <ul class="navbar">
+      <li><img src="C:\Users\reyoo\Desktop\logo.jpg" alt="Logo" class="logo"></li>
+   
+      <li><a href="Home.html">Home</a></li>
+      <li><a href="ProjectMulti-layer.html">Reservation</a></li>
+      <li><a href="Account Payment.html">Payment</a></li>
+      <li><a href="FAQ.html">FAQ</a></li>
+      <li><a href="Contact Us.html">Contact Us</a></li>
+      <li><a href="Logout.html">Logout</a></li>
+    </ul>
+  </nav>
+<body>
+<h1>Table Quantity Calculator</h1>
+<img src="table.jpeg"alt="table">
+<label for="product">Select The Table Type:</label>
+<select id="product">
+<option value="1" data-price="50.00">Normal Table</option>
+<option value="2" data-price="100.00">VIP Table</option>
+<option value="3" data-price="70.00">Outdoor Table</option>
+</select>
+<br>
+<label for="quantity">Chair Quantity:</label>
+<input type="number" id="quantity" min="0" value="0">
+<br>
+<button onclick="calculateTotal()">Calculate</button>
+<p id="total"></p>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Account Payment</title>
+	<style>
+	h1{
+	color: navy;
+	text-align:center;
+	}
+	button{
+	background-color:navy;
+	color:white;
+	padding:14px 20px;
+	border:None;
+	border-radius:5px;
+	margin:5px;
+	}
+	body{
+	background-color:#f2f2f2;
+	text-align:center;
+	}
+    /* CSS for the navigation bar */
+    ul.navbar {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color:navy;
+      text-align: center;
+    }
+
+    ul.navbar li {
+      display: inline-block;
+      margin: 10px;
+    }
+    
+    ul.navbar li a {
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+    
+    ul.navbar li a:hover {
+      background-color: #111;
+    }
+
+    .logo {
+      display: block;
+      margin: 0 auto;
+      max-width: 100px;
+      max-height: 100px;
+	  text-align:center;
+    }
+
+    .website-name {
+      color: white;
+      font-weight: bold;
+      font-size: 20px;
+      margin-top: 10px;
+    }
+</style>
+</head>
+<body>
+
+  <nav>
+    <ul class="navbar">
+      <li><img src="C:\Users\reyoo\Desktop\logo.jpg" alt="Logo" class="logo"></li>
+   
+      <li><a href="Home.html">Home</a></li>
+      <li><a href="ProjectMulti-layer.html">Reservation</a></li>
+      <li><a href="Account Payment.html">Payment</a></li>
+      <li><a href="FAQ.html">FAQ</a></li>
+      <li><a href="Contact Us.html">Contact Us</a></li>
+      <li><a href="Logout.html">Logout</a></li>
+    </ul>
+  </nav>
+<img src="C:\Users\reyoo\Downloads\WhatsApp Image 2024-04-18 at 7.00.51 PM.jpeg" width="300" height="200" >
+    <h1> Payment</h1>
+
+    <form method="POST" action="process_payment.php">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br>
+        <label for="account_number">Card Number:</label>
+        <input type="text" id="account_number" name="account_number" required><br>
+        <label for="expiration_date">EXP Date:</label>
+        <input type="Date" id="expiration_date" name="expiration_date" required><br>
+        <label for="cvv">CVV:</label>
+        <input type="text" id="cvv" name="cvv" required><br>
+        <button type="submit">Confirm </button>
+    </form>
+</body>
+
+<?php
+extract($_POST);
+
+sesstion_start();
+$username=$_SESSTION[‘loged’];
+
+$query=“delet from cart where username=‘$username’”;
+
+$database=mysqli_connect(“localhost”,”root”,”bookedup”) or die(“could not connect to database”);
+
+mysqli_set_charset($database,’utf8’);
+
+$result=mysqli_query($database,$query);
+
+header (‘location: Account Payment.html’)
+
+?>
+</html>

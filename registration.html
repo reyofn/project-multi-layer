@@ -1,0 +1,111 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+<meta charset = "utf-8"> 
+<title> Booking Form</title> 
+<link rel="stylesheet" type="text/css" href="style.css">
+<style>
+body{
+background-color:#f2f2f2;
+text-align:center;
+h1{
+color:navy;
+text-align:center;
+}
+.button{
+background-color:navy;
+color:white;
+padding:14px 20px ;
+border:none;
+border-radius:5px
+margin:5px;
+}
+p{
+color:blue;
+}
+    /* CSS for the navigation bar */
+    ul.navbar {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color:navy;
+      text-align: center;
+    }
+
+    ul.navbar li {
+      display: inline-block;
+      margin: 10px;
+    }
+    
+    ul.navbar li a {
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+    
+    ul.navbar li a:hover {
+      background-color: #111;
+    }
+
+    .logo {
+      display: block;
+      margin: 0 auto;
+      max-width: 100px;
+      max-height: 100px;
+	  text-align:center;
+    }
+
+    .website-name {
+      color: white;
+      font-weight: bold;
+      font-size: 20px;
+      margin-top: 10px;
+    }
+
+</style>
+
+</head> 
+<body> 
+
+  <nav>
+    <ul class="navbar">
+      <li><img src="C:\Users\reyoo\Desktop\logo.jpg" alt="Logo" class="logo"></li>
+   
+      <li><a href="Home.html">Home</a></li>
+      <li><a href="ProjectMulti-layer.html">Reservation</a></li>
+      <li><a href="Account Payment.html">Payment</a></li>
+      <li><a href="FAQ.html">FAQ</a></li>
+      <li><a href="Contact Us.html">Contact Us</a></li>
+      <li><a href="Logout.html">Logout</a></li>
+    </ul>
+  </nav>
+<h1>Register</h1> 
+
+<form method ="post" action="Add_user.php"> 
+<p><label>Name: <input name="fName" type="text" size="15" placeholder="First Name"> 
+<p><label>E-mail: <input  name="Email"type="e-mail" placeholder="name@domain.com"></label></p> 
+<p><label>Phone: <input name="phone" type="tel" placeholder="(###) - ### - ####"></label></p> 
+<p><label>Date: <input name="Date" type="datetime-local"></label></p> 
+<p> 
+<label>Select branch of the company: 
+<select name="branch"> 
+<option selected> Riyadh</option> 
+<option> Dammam</option> 
+<option> Tabuk</option> 
+<option> Jeddah</option> 
+</select> 
+</label> 
+</p> 
+<p> 
+<input type="submit" value="Register" class="button"> 
+</p> 
+</form> 
+<p>Don't have an account?&nbsp; &nbsp; <a href="new_user.html">Register</a>
+</p>
+</body> 
+
+
+</html>
